@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Cheumega Cyrielle — Contact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #14100d;
+    --surface: #1c1713;
+    --surface-2: #211b16;
+    --line: #362d24;
+    --text: #f4ede2;
+    --muted: #9c8f7f;
+    --orange: #ff7900;
+    --orange-dim: #ffb066;
+    --whatsapp: #25d366;
+    --whatsapp-dim: #7fe3a8;
+  }
+
+  *{ box-sizing: border-box; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  html, body{
+    margin:0;
+    padding:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100dvh;
+  }
+
+  body{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding: 40px 16px 60px;
+    background-image:
+      radial-gradient(circle at 50% 0%, rgba(255,121,0,0.10), transparent 55%);
+  }
+
+  .card{
+    width:100%;
+    max-width: 420px;
+  }
+
+  /* --- Signature: NFC tap-pulse glyph --- */
+  .pulse-wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    padding: 10px 0 34px;
+  }
+
+  .pulse{
+    position:relative;
+    width:72px;
+    height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .pulse-dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background: var(--orange);
+    box-shadow: 0 0 12px rgba(255,121,0,0.7);
+    z-index:2;
+  }
+
+  .pulse-ring{
+    position:absolute;
+    border-radius:50%;
+    border: 1.5px solid var(--orange);
+    opacity:0;
+    animation: ring 2.6s cubic-bezier(.2,.6,.3,1) infinite;
+  }
+  .pulse-ring:nth-child(1){ width:28px; height:28px; animation-delay: 0s; }
+  .pulse-ring:nth-child(2){ width:28px; height:28px; animation-delay: 0.7s; }
+  .pulse-ring:nth-child(3){ width:28px; height:28px; animation-delay: 1.4s; }
+
+  @keyframes ring{
+    0%   { width:24px; height:24px; opacity:0.9; border-color: var(--orange); }
+    70%  { opacity:0.15; }
+    100% { width:72px; height:72px; opacity:0; border-color: var(--orange); }
+  }
+
+  .eyebrow{
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight:600;
+  }
+
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size: clamp(28px, 8vw, 34px);
+    font-weight:700;
+    margin: 4px 0 2px;
+    text-align:center;
+    letter-spacing: -0.01em;
+  }
+
+  .subtitle{
+    color: var(--muted);
+    font-size: 14.5px;
+    text-align:center;
+    margin:0;
+  }
+
+  /* --- Action list --- */
+  .actions{
+    display:flex;
+    flex-direction:column;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow:hidden;
+    background: var(--surface);
+  }
+
+  .action{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding: 18px 18px;
+    text-decoration:none;
+    color:var(--text);
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .action:last-child{ border-bottom:none; }
+  .action:active{ background: var(--surface-2); }
+
+  .icon{
+    flex:0 0 auto;
+    width:44px;
+    height:44px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .icon svg{ width:22px; height:22px; }
+
+  .icon.wa{ background: rgba(37,211,102,0.12); }
+  .icon.wa svg{ fill: var(--whatsapp); }
+  .icon.call{ background: rgba(244,237,226,0.08); }
+  .icon.call svg{ fill: var(--text); }
+  .icon.om{ background: rgba(255,121,0,0.14); }
+  .icon.om svg{ fill: var(--orange); }
+
+  .action-text{ flex:1 1 auto; min-width:0; }
+  .action-title{ font-weight:600; font-size:15.5px; }
+  .action-sub{ color: var(--muted); font-size:13px; margin-top:1px; }
+
+  .chevron{ flex:0 0 auto; color: var(--muted); }
+
+  /* --- Orange Money block (not a single tap action, needs display + copy) --- */
+  .om-block{
+    padding: 18px 18px 20px;
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .om-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:14px;
+  }
+
+  .om-fields{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-left:58px;
+  }
+
+  .field{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius:10px;
+    padding: 10px 12px;
+  }
+
+  .field-value{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:14.5px;
+    font-weight:500;
+    letter-spacing:0.01em;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  .copy-btn{
+    flex:0 0 auto;
+    border:none;
+    background: rgba(255,121,0,0.14);
+    color: var(--orange-dim);
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    padding:7px 11px;
+    border-radius:8px;
+    cursor:pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .copy-btn:active{ background: var(--orange); color: #1a0f00; }
+  .copy-btn.copied{ background: var(--orange); color:#1a0f00; }
+
+  footer{
+    text-align:center;
+    color: var(--muted);
+    font-size:12.5px;
+    margin-top:26px;
+    letter-spacing:0.02em;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="pulse-wrap">
+    <div class="pulse" aria-hidden="true">
+      <span class="pulse-ring"></span>
+      <span class="pulse-ring"></span>
+      <span class="pulse-ring"></span>
+      <span class="pulse-dot"></span>
+    </div>
+    <div>
+      <p class="eyebrow" style="text-align:center;">Carte scannée</p>
+      <h1>YEMTE NOUBISSIE JORES</h1>
+      <p class="subtitle">Choisissez comment me contacter</p>
+    </div>
+  </div>
+
+  <div class="actions">
+
+    <a class="action" href="https://wa.me/237658771292" target="_blank" rel="noopener">
+      <span class="icon wa">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.014 2C6.502 2 2.02 6.48 2.02 11.994c0 1.995.583 3.847 1.588 5.408L2 22l4.723-1.575a9.958 9.958 0 0 0 5.29 1.516h.005c5.512 0 9.994-4.48 9.994-9.994C22.012 6.48 17.53 2 12.014 2zm5.815 15.79a8.29 8.29 0 0 1-5.815 2.408h-.004a8.32 8.32 0 0 1-4.242-1.163l-.304-.18-3.153 1.05.79-3.06-.198-.315a8.32 8.32 0 0 1-1.274-4.436c0-4.596 3.732-8.331 8.324-8.331 2.223 0 4.313.867 5.885 2.44a8.28 8.28 0 0 1 2.437 5.886 8.312 8.312 0 0 1-2.446 5.7z"/></svg>
+      </span>
+      <span class="action-text">
+        <div class="action-title">Discuter sur WhatsApp</div>
+        <div class="action-sub">+237 658 771 292</div>
+      </span>
+      <span class="chevron">›</span>
+    </a>
+
+    <a class="action" href="tel:+237658771292">
+      <span class="icon call">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.01l-2.2 2.21z"/></svg>
+      </span>
+      <span class="action-text">
+        <div class="action-title">Appeler</div>
+        <div class="action-sub">+237 658 771 292</div>
+      </span>
+      <span class="chevron">›</span>
+    </a>
+
+    <div class="om-block">
+      <div class="om-head">
+        <span class="icon om">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 2a8 8 0 1 1-8 8 8 8 0 0 1 8-8zm-1 3v4H8v2h3v4h2v-4h3v-2h-3V7z"/></svg>
+        </span>
+        <span class="action-text">
+          <div class="action-title">Dépôt Orange Money</div>
+          <div class="action-sub">Numéro et nom pour le dépôt</div>
+        </span>
+      </div>
+
+      <div class="om-fields">
+        <div class="field">
+          <span class="field-value" id="om-number">+237 658 771 292</span>
+          <button class="copy-btn" onclick="copyField('om-number', this)">Copier</button>
+        </div>
+        <div class="field">
+          <span class="field-value" id="om-name">Cheumega Cyrielle</span>
+          <button class="copy-btn" onclick="copyField('om-name', this)">Copier</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Tapez à nouveau la carte pour revenir ici</footer>
+</div>
+
+<script>
+function copyField(id, btn){
+  const text = document.getElementById(id).textContent.trim();
+  const done = () => {
+    const original = btn.textContent;
+    btn.textContent = 'Copié';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.classList.remove('copied');
+    }, 1400);
+  };
+  if (navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done){
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+  done();
+}
+</script>
+
+</body>
+</html>
