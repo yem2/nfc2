@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/avatar.jpg", "destination": "https://cheumega-contact-os9s2tipr-yemte-noubissie-jores-projects.vercel.app/avatar.jpg" },
+    { "source": "/cv-jores-yemte.pdf", "destination": "https://cheumega-contact-os9s2tipr-yemte-noubissie-jores-projects.vercel.app/cv-jores-yemte.pdf" }
+  ]
+}
